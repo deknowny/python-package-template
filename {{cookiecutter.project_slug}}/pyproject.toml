@@ -1,0 +1,30 @@
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "{{cookiecutter.project_slug}}"
+version = "0.1.0"
+description = "{{cookiecutter.description}}"
+authors = ["{{cookiecutter.author_name}} {{cookiecutter.author_email}}"]
+license = "MIT"
+homepage = "{{cookiecutter.github_name}}"
+documentation = ""  # Docs URL
+readme = "README.md"
+keywords = []  # Search keywords (max 5)
+classifiers = []  # PyPI classifiers
+
+[tool.poetry.dependencies]
+python = "^{{cookiecutter.min_supported_version}}"
+
+[tool.poetry.dev-dependencies]
+black = "^21.11b1"
+isort = "^5.10.1"
+
+[tool.black]
+line-length = 78
+
+[tool.isort]
+profile = "wemake"
+src_paths = ["{{cookiecutter.project_slug}}", "tests"]
+line_length = 78

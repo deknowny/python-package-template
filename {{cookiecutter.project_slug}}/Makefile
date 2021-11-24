@@ -1,0 +1,39 @@
+# Used to execute all in one shell
+.ONESHELL:
+
+# Default recipe
+DEFAULT: help
+help:
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
+
+pypoetry = python{{cookiecutter.development_python_version}} -m poetry
+
+# Upgrade poetry, setup for installation
+setup:
+	python{{cookiecutter.development_python_version}} install --upgrade poetry
+	$(pypoetry) config virtualenvs.in-project true --local
+
+# Install project in production mode
+install: setup
+	$(pypoetry) install --no-dev
+
+# Install project in development mode
+install-dev: setup
+	$(pypoetry) install && $(pypoetry) run pre-commit install
+
+# Reformat code style
+format:
+	$(pypoetry) run black {{ cookiecutter.project_slug }} && \
+	$(pypoetry) run isort {{ cookiecutter.project_slug }}
+
+# Run tests local 
+test:
+	$(pypoetry) run pytest tests --cov={{cookiecutter.project_slug}} --cov-report=html
+
+# Tests command for CI with .coveragerc report
+test-ci:
+	$(pypoetry) run coverage run --source={{cookiecutter.project_slug}} -m pytest tests
+
+# Serve coverage report
+serve-cov:
+	python -m http.server -d htmlcov -b 127.0.0.1

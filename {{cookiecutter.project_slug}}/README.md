@@ -1,0 +1,6 @@
+# {{cookiecutter.project_name}}
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/{{cookiecutter.project_slug}})
+![PyPI - Implementation](https://img.shields.io/pypi/implementation/{{cookiecutter.project_slug}})
+![PyPI](https://img.shields.io/pypi/v/{{cookiecutter.project_slug}})
+[![Coverage Status](https://coveralls.io/repos/github/{{cookiecutter.github_name}}/badge.svg?branch=main)](https://coveralls.io/github/{{cookiecutter.github_name}}?branch=main)
+> {{cookiecutter.project_description}}

@@ -1,0 +1,10 @@
+{
+    "project_name": "",
+    "project_slug": "{{ cookiecutter.project_name|lower|replace(' ', '-') }}",
+    "project_description": "",
+    "author_name": "",
+    "author_email": "",
+    "development_python_version": "3.9",
+    "min_supported_version": "{{cookiecutter.development_python_version}}",
+    "github_name": "user/example"
+}
