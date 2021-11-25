@@ -1,16 +1,11 @@
 # Used to execute all in one shell
 .ONESHELL:
 
-# Default recipe
-DEFAULT: help
-help:
-	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
-
 pypoetry = python{{cookiecutter.development_python_version}} -m poetry
 
 # Upgrade poetry, setup for installation
 setup:
-	python{{cookiecutter.development_python_version}} install --upgrade poetry
+	python{{cookiecutter.development_python_version}} -m pip install --upgrade poetry
 	$(pypoetry) config virtualenvs.in-project true --local
 
 # Install project in production mode
