@@ -5,10 +5,10 @@ build-backend = "poetry.core.masonry.api"
 [tool.poetry]
 name = "{{cookiecutter.project_slug}}"
 version = "0.1.0"
-description = "{{cookiecutter.description}}"
+description = "{{cookiecutter.project_description}}"
 authors = ["{{cookiecutter.author_name}} {{cookiecutter.author_email}}"]
 license = "MIT"
-homepage = "{{cookiecutter.github_name}}"
+homepage = "{{cookiecutter.github_project_name}}"
 documentation = ""  # Docs URL
 readme = "README.md"
 keywords = []  # Search keywords (max 5)

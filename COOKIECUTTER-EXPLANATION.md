@@ -37,7 +37,7 @@ Python version used in developing
 ## *__min_supported_version__*
 * `pyproject.toml`
 ***
-## *__github_name__*
+## *__github_project_name__*
 GitHub username + project name i.e. `deknowny/python-package-template`
 * `README.md` badges
 * `pyproject.toml`
