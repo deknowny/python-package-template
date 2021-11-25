@@ -17,13 +17,13 @@ jobs:
         # Select platforms that the library should support
         platform: ["ubuntu-latest", "macos-11", "windows-2019"]
 
-    runs-on: ${{ matrix.platform }}
+    runs-on: {% raw %}${{ matrix.platform }}{% endraw %}
 
     steps:
       # Correctly install required version
       - uses: actions/setup-python@v2
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: {% raw %}${{ matrix.python-version }}{% endraw %}
 
       # Checkout ot the repo
       - uses: actions/checkout@v2
@@ -42,8 +42,8 @@ jobs:
       - name: Upload coverage data to coveralls.io
         run: poetry run coveralls --service=github
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          COVERALLS_FLAG_NAME: ${{ matrix.python-version }}
+          GITHUB_TOKEN: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}
+          COVERALLS_FLAG_NAME: {% raw %}${{ matrix.python-version }}{% endraw %}
           COVERALLS_PARALLEL: true
 
   # Upload coverage
@@ -58,4 +58,4 @@ jobs:
           pip3 install --upgrade coveralls
           coveralls --service=github --finish
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}
