@@ -17,7 +17,7 @@ jobs:
       # Correctly install the python
       - uses: actions/setup-python@v2
         with:
-          python-version: {{cookicutter.development_python_version}}
+          python-version: {{cookiecutter.development_python_version}}
       - name: Setup Poetry
         run: |
           python -m pip install poetry
