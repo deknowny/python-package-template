@@ -23,5 +23,5 @@ jobs:
           python -m pip install poetry
       - name: Deploy to PyPI
           run: |
-            poetry config pypi-token.pypi ${{ secrets.PYPI_TOKEN }} --local
+            poetry config pypi-token.pypi {% raw %}${{ secrets.PYPI_TOKEN }}{% endraw %} --local
             poetry publish --build
