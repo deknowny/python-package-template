@@ -10,13 +10,14 @@ My python library template repo with useful tools for developing. Made with cook
 - [x] `black` and `isort` configured
 - [x] Extended `.gitignore`
 - [x] `.editoconfig` configured
+- [x] `mypy` configured
+- [x] `bumpversion` configured
 ### Soon
 - [ ] `Mkdocs` with `Material` theme docs builder
 - [ ] Handbook how to use this template
-- [ ] `mypy` configured
 - [ ] Read The Docs configured
 - [ ] `pylint` configured
-- [ ] `bumpversion`
+
 
 ##
 

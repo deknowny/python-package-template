@@ -9,12 +9,24 @@ setup:
 	$(pypoetry) config virtualenvs.in-project true --local
 
 # Install project in production mode
-install: setup
+install-production: setup
 	$(pypoetry) install --no-dev
 
 # Install project in development mode
-install-dev: setup
-	$(pypoetry) install && $(pypoetry) run pre-commit install
+install-dev-all: setup
+	$(pypoetry) install -E dev-all && $(pypoetry) run pre-commit install
+
+# Install project with dev style dependencies
+install-dev-style: setup
+	$(pypoetry) install -E dev-style && $(pypoetry) run pre-commit install
+
+# Install static checkers (i.e. mypy)
+install-dev-check: setup
+	$(pypoetry) install -E dev-check && $(pypoetry) run pre-commit install
+
+# Install tests tools
+install-dev-test: setup
+	$(pypoetry) install -E dev-test && $(pypoetry) run pre-commit install
 
 # Reformat code style
 format:
