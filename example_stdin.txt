@@ -1,0 +1,8 @@
+Test library
+testlib
+My test lib with cookiecutter
+Yan Kurbatov
+user@example.com
+3.9
+3.7
+deknowny/example

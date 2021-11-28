@@ -1,6 +1,8 @@
 # Folder for notes and drafts
 .drafts/
 
+output/
+
 # MacOS Finder storage
 .DS_Store
 

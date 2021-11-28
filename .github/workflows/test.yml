@@ -1,0 +1,15 @@
+name: Test template install
+
+on: push
+
+jobs:
+  test_installing:
+    name: Test installing
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      - uses: actions/checkout@v2
+      - name: Init test output dir
+        run: make setup && make

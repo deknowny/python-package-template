@@ -6,7 +6,7 @@ build-backend = "poetry.core.masonry.api"
 name = "{{cookiecutter.project_slug}}"
 version = "0.1.0"
 description = "{{cookiecutter.project_description}}"
-authors = ["{{cookiecutter.author_name}} {{cookiecutter.author_email}}"]
+authors = ["{{cookiecutter.author_name}} <{{cookiecutter.author_email}}>"]
 license = "MIT"
 homepage = "{{cookiecutter.github_project_name}}"
 documentation = ""  # Docs URL
@@ -20,6 +20,7 @@ python = "^{{cookiecutter.min_supported_version}}"
 [tool.poetry.dev-dependencies]
 black = "^21.11b1"
 isort = "^5.10.1"
+pytest = "^6.2.5"
 
 [tool.black]
 line-length = 78
