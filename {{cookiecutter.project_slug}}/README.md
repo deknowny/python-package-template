@@ -11,7 +11,7 @@ Soone
 ## Overview
 
 # Installation
-Via PyPI ():
+Via PyPI:
 ```shell
 python -m pip install {{cookiecutter.project_slug}}
 ```
