@@ -15,6 +15,7 @@ install-production: setup
 # Setup the project firstly
 firstly-init: setup
 	git init
+	git remote add origin https://github.com/{{cookiecutter.github_project_name}}
 	make install-dev-all
 
 # Install project in development mode
