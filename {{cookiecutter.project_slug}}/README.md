@@ -7,8 +7,9 @@
 {{cookiecutter.project_description}}
 
 # Features
-Soone
+In developing now. Will be later
 ## Overview
+Later
 
 # Installation
 Via PyPI:
