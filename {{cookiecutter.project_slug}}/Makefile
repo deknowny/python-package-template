@@ -31,7 +31,12 @@ install-dev-test: setup
 # Reformat code style
 format:
 	$(pypoetry) run black {{ cookiecutter.project_slug }} && \
-	$(pypoetry) run isort {{ cookiecutter.project_slug }}
+	$(pypoetry) run isort {{ cookiecutter.project_slug }} && \
+	$(pypoetry) run autoflake \
+		--ignore-init-module-imports \
+		--remove-unused-variables \
+		--recursive \
+		--in-place {{ cookiecutter.project_slug }} tests
 
 # Run tests local 
 test:
@@ -44,3 +49,7 @@ test-ci:
 # Serve coverage report
 serve-cov:
 	python -m http.server -d htmlcov -b 127.0.0.1
+
+# Run mypy checking
+check:
+	$(pypoetry) run mypy

@@ -6,5 +6,6 @@
     "author_email": "",
     "development_python_version": "3.9",
     "min_supported_version": "{{cookiecutter.development_python_version}}",
-    "github_project_name": "user/example"
+    "github_project_name": "user/example",
+    "github_main_branch": "main"
 }

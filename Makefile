@@ -10,7 +10,8 @@ instance:
 
 instance-init-test: instance
 	cd output/testlib && \
-	python3.8 -m poetry install -E dev-all && \
-	python3.8 -m poetry run python -m pytest tests && \
-	python3.8 -m poetry run python -m mypy && \
+	make install-dev-all && \
+	make test && \
+	make check && \
+	make format && \
 	git init

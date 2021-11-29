@@ -31,9 +31,11 @@ pytest-cov = {optional = true, version="^3.0.0"}
 coveralls = {optional = true, version="^3.3.1"}
 coverage = {optional = true, version="^6.1.2"}
 bumpversion = {optional = true, version="^0.5.3"}
+autoflake = {optional = true, version="^1.4"}
+mypy = {optional = true, version="^0.910"}
 
 [tool.poetry.extras]
-dev-style = ["black", "isort", "pre-commit"]
+dev-style = ["black", "isort", "pre-commit", "autoflake"]
 dev-test = ["pytest", "pytest-cov", "coveralls", "coverage"]
 dev-check = ["mypy"]
 dev-deploy = ["bumpversion"]
@@ -42,7 +44,8 @@ dev-all = [
     "pytest", "pytest-cov",
     "coveralls", "coverage",
     "mypy",
-    "bumpversion"
+    "bumpversion",
+    "autoflake"
 ]
 
 
