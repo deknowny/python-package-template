@@ -6,7 +6,6 @@ pypoetry = python{{cookiecutter.development_python_version}} -m poetry
 # Upgrade poetry, setup for installation
 setup:
 	python{{cookiecutter.development_python_version}} -m pip install --upgrade poetry
-	$(pypoetry) config virtualenvs.in-project true --local
 
 # Install project in production mode
 install-production: setup
