@@ -12,6 +12,11 @@ setup:
 install-production: setup
 	$(pypoetry) install --no-dev
 
+# Setup the project firstly
+firstly-init: setup
+	git init
+	make install-dev-all
+
 # Install project in development mode
 install-dev-all: setup
 	$(pypoetry) install -E dev-all && $(pypoetry) run pre-commit install
