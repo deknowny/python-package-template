@@ -4,5 +4,5 @@ repos:
       - id: formatting
         language: system
         name: Formatting
-        entry: make style
+        entry: make format
         files: .py
