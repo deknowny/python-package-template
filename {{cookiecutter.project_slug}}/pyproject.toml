@@ -18,7 +18,7 @@ classifiers = []  # PyPI classifiers
 python = "^{{cookiecutter.min_supported_version}}"
 
 # Place dev dependencies here bacause
-# they does not support `extras`.
+# they do not support `extras`.
 # So if you use `mypy` as dev dependencies
 # And run tests on `pypy`, you will see an error.
 # That means some libs are not supported on some python
@@ -33,19 +33,22 @@ coverage = {optional = true, version="^6.1.2"}
 bumpversion = {optional = true, version="^0.5.3"}
 autoflake = {optional = true, version="^1.4"}
 mypy = {optional = true, version="^0.910"}
+mkdocs = {optional = true, version="^1.2.3"}
 
 [tool.poetry.extras]
 dev-style = ["black", "isort", "pre-commit", "autoflake"]
 dev-test = ["pytest", "pytest-cov", "coveralls", "coverage"]
 dev-check = ["mypy"]
 dev-deploy = ["bumpversion"]
+dev-docs = ["mkdocs"]
 dev-all = [
     "black", "isort", "pre-commit",
     "pytest", "pytest-cov",
     "coveralls", "coverage",
     "mypy",
     "bumpversion",
-    "autoflake"
+    "autoflake",
+    "mkdocs"
 ]
 
 
