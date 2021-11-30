@@ -18,7 +18,7 @@ firstly-init: setup
 	git checkout -b gh-pages
 	git commit --allow-empty -m "Initial commit fo GH Pages"
 	git push origin gh-pages -f
-	git checkout {{cookiecutter.github_main_branch}}
+	git checkout -b {{cookiecutter.github_main_branch}}
 	make install-dev-all
 
 # Install project in development mode
