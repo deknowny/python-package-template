@@ -1,0 +1,32 @@
+# Title of the site
+site_name: {{cookiecutter.project_slug}}
+
+# Description of the site
+site_description: {{cookiecutter.project_description}}
+
+# URL for pages editing
+repo_url: https://github.com/{{cookiecutter.github_project_name}}/tree/main
+
+# Branch chosen when routing to repository
+remote_branch: {{cookiecutter.github_main_branch}}
+
+# Site's content
+nav:
+  - Home: index.md
+
+
+# Theme preference. Use `mkdocs-material`
+theme:
+  name: material
+  font:
+    text: Ubuntu
+    code: Monaco
+  features:
+    - header.autohide
+#    palette:
+#      scheme: slate
+#      accent: amber
+
+# Material extensions
+markdown_extensions:
+  - admonition
