@@ -34,13 +34,14 @@ bumpversion = {optional = true, version="^0.5.3"}
 autoflake = {optional = true, version="^1.4"}
 mypy = {optional = true, version="^0.910"}
 mkdocs = {optional = true, version="^1.2.3"}
+mkdocs-material = "^8.0.2"
 
 [tool.poetry.extras]
 dev-style = ["black", "isort", "pre-commit", "autoflake"]
 dev-test = ["pytest", "pytest-cov", "coveralls", "coverage"]
 dev-check = ["mypy"]
 dev-deploy = ["bumpversion"]
-dev-docs = ["mkdocs"]
+dev-docs = ["mkdocs", "mkdocs-material"]
 dev-all = [
     "black", "isort", "pre-commit",
     "pytest", "pytest-cov",
@@ -48,7 +49,7 @@ dev-all = [
     "mypy",
     "bumpversion",
     "autoflake",
-    "mkdocs"
+    "mkdocs", "mkdocs-material"
 ]
 
 
