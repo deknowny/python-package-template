@@ -64,11 +64,11 @@ serve-cov:
 	python -m http.server -d htmlcov -b 127.0.0.1
 
 # Run hot-reloaded docs server
-serve-doc:
+serve-docs:
 	$(pypoetry) run mkdocs serve
 
 # Deploy docs command
-deploy-doc:
+deploy-docs:
 	$(pypoetry) run mkdocs gh-deploy
 
 # Run mypy checking
