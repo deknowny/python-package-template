@@ -20,13 +20,14 @@ jobs:
     runs-on: {% raw %}${{ matrix.platform }}{% endraw %}
 
     steps:
+
+      # Checkout ot the repo
+      - uses: actions/checkout@v2
+        -
       # Correctly install required version
       - uses: actions/setup-python@v2
         with:
           python-version: {% raw %}${{ matrix.python-version }}{% endraw %}
-
-      # Checkout ot the repo
-      - uses: actions/checkout@v2
 
       # Install project with test dependencies
       - name: Installing the current project in dev mode
