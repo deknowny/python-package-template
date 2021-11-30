@@ -6,3 +6,4 @@ repos:
         name: Formatting
         entry: make format
         files: .py
+        pass_filenames: false
