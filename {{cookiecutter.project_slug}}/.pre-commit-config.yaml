@@ -1,9 +1,13 @@
 repos:
   - repo: local
     hooks:
-      - id: formatting
+      - id: Black formatting
         language: system
         name: Formatting
-        entry: make format
+        entry: poetry run black {{cookiecutter.project_slug}} tests
         files: .py
-        pass_filenames: false
+      - id : Isort formatting
+        language: system
+        name: Formatting
+        entry: poetry run isort {{cookiecutter.project_slug}} tests
+        files: .py
