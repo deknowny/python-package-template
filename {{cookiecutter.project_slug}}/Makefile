@@ -27,11 +27,15 @@ install-dev-style: setup
 
 # Install static checkers (i.e. mypy)
 install-dev-check: setup
-	$(pypoetry) install -E dev-check && $(pypoetry) run pre-commit install
+	$(pypoetry) install -E dev-check
+
+# Install docs builder dependencies
+install-dev-docs: setup
+	$(pypoetry) install -E dev-docs
 
 # Install tests tools
 install-dev-test: setup
-	$(pypoetry) install -E dev-test && $(pypoetry) run pre-commit install
+	$(pypoetry) install -E dev-test
 
 # Reformat code style
 format:
@@ -54,6 +58,14 @@ test-ci:
 # Serve coverage report
 serve-cov:
 	python -m http.server -d htmlcov -b 127.0.0.1
+
+# Run hot-reloaded docs server
+serve-doc:
+	$(pypoetry) run mkdocs serve
+
+# Deploy docs command
+deploy-doc:
+	$(pypoetry) run mkdocs gh-deploy
 
 # Run mypy checking
 check:

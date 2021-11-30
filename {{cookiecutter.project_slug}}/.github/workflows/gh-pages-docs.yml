@@ -1,0 +1,18 @@
+name: Deploy docs to GitHub Pages
+
+on:
+  push:
+    branches:
+      - {{cookiecutter.github_main_branch}}
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: {{cookiecutter.development_python_version}}
+      - run: make install-dev-docs
+        name: Install mkdocs dependencies
+      - run: make deploy-docs
+        name: Build docs
