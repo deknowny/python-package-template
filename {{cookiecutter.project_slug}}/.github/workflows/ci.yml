@@ -51,7 +51,7 @@ jobs:
     runs-on: ubuntu-latest
     container: python:{{cookiecutter.development_python_version}}
     steps:
-      uses: actions/setup-python@v2
+      - uses: actions/setup-python@v2
       - name: Finished
         run: |
           make install-dev-test
