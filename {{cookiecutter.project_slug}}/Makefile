@@ -69,7 +69,7 @@ serve-docs:
 
 # Deploy docs command
 deploy-docs:
-	$(pypoetry) run mkdocs gh-deploy -b gh-pages --force  
+	$(pypoetry) run mkdocs gh-deploy -b gh-pages --force
 
 # Run mypy checking
 check:

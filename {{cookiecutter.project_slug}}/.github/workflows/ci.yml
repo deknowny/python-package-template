@@ -23,7 +23,6 @@ jobs:
 
       # Checkout ot the repo
       - uses: actions/checkout@v2
-        -
       # Correctly install required version
       - uses: actions/setup-python@v2
         with:
