@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "{{cookiecutter.project_slug}}_docs"
 version = "0.1.0a0"
-description = "Docs for the {{cookiecutter.project_name} project"
+description = "Docs for the {{cookiecutter.project_name}} project"
 authors = ["{{cookiecutter.author_name}} <{{cookiecutter.author_email}}>"]
 license = "MIT"
 
