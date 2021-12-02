@@ -1,11 +1,16 @@
 # Used to execute all in one shell
 .ONESHELL:
 
-pypoetry = python{{cookiecutter.development_python_version}} -m poetry
+ifeq ($(OS), Windows_NT)
+	python = python{{cookiecutter.development_python_version}}
+else
+	python = py{{cookiecutter.development_python_version}}
+endif
+pypoetry = $(python) -m poetry
 
 # Upgrade poetry, setup for installation
 setup:
-	python{{cookiecutter.development_python_version}} -m pip install --upgrade poetry
+	$(python) -m pip install --upgrade poetry
 
 # Install project in production mode
 install-production: setup
