@@ -15,7 +15,7 @@ jobs:
         # Select python versions that the library should support
         python-version: ["{{cookiecutter.development_python_version}}"]  # [ "3.7", "3.8", "3.9", "3.10", "pypy-3.8", "pypy-3.7"]
         # Select platforms that the library should support
-        platform: ["ubuntu-latest", "macos-11"]
+        platform: ["ubuntu-latest", "macos-11", "windows-2022"]
 
     runs-on: {% raw %}${{ matrix.platform }}{% endraw %}
 
