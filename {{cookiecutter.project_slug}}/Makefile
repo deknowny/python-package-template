@@ -2,15 +2,16 @@
 .ONESHELL:
 
 ifeq ($(OS), Windows_NT)
-	python = python{{cookiecutter.development_python_version}}
+	python_executable = python{{cookiecutter.development_python_version}}
 else
-	python = py{{cookiecutter.development_python_version}}
+	python_executable = py{{cookiecutter.development_python_version}}
 endif
-pypoetry = $(python) -m poetry
+
+pypoetry = $(python_executable) -m poetry
 
 # Upgrade poetry, setup for installation
 setup:
-	$(python) -m pip install --upgrade poetry
+	$(python_executable) -m pip install --upgrade poetry
 
 # Install project in production mode
 install-production: setup
