@@ -1,10 +1,11 @@
 # Used to execute all in one shell
 .ONESHELL:
 
+python_executable = NULL
 ifeq ($(OS), Windows_NT)
-	python_executable = python{{cookiecutter.development_python_version}}
-else
 	python_executable = py{{cookiecutter.development_python_version}}
+else
+	python_executable = python{{cookiecutter.development_python_version}}
 endif
 
 pypoetry = $(python_executable) -m poetry
