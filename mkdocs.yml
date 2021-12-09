@@ -36,9 +36,9 @@ theme:
     code: Monaco
   features:
     - header.autohide
-#    palette:
-#      scheme: slate
-#      accent: amber
+    -
+extra_css:
+  - stylesheets/slate.css
 
 # Material extensions
 markdown_extensions:
