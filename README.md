@@ -1,4 +1,4 @@
-# Python Package Template
+# Pypate (Python Package Template)
 My python library template repo with useful tools for developing. Made with cookiecutter
 
 # Features

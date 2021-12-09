@@ -1,11 +1,11 @@
 # Title of the site
-site_name: Docs | python-package-template
+site_name: Pypate
 
 # Description of the site
 site_description: Docs for the python-package-template
 
 # URL for pages editing
-repo_url: https://github.com/python-package-template/tree/main
+repo_url: https://github.com/python-package-template
 
 # Branch chosen when routing to repository
 remote_branch: gh-pages
@@ -18,6 +18,15 @@ nav:
 # Theme preference. Use `mkdocs-material`
 theme:
   name: material
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/lightbulb-outline
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/lightbulb
+        name: Switch to light mode
   font:
     text: Ubuntu
     code: Monaco
