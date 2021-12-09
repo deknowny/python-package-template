@@ -1,14 +1,14 @@
 # Title of the site
-site_name: {{cookiecutter.project_slug}}
+site_name: Docs | python-package-template
 
 # Description of the site
-site_description: {{cookiecutter.project_description}}
+site_description: Docs for the python-package-template
 
 # URL for pages editing
-repo_url: https://github.com/{{cookiecutter.github_project_name}}/tree/main
+repo_url: https://github.com/python-package-template/tree/main
 
 # Branch chosen when routing to repository
-remote_branch: {{cookiecutter.github_main_branch}}
+remote_branch: gh-pages
 
 # Site's content
 nav:
