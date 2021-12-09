@@ -1,18 +1,15 @@
 # Used to execute all in one shell
 .ONESHELL:
 
-python_executable = NULL
-ifeq ($(OS), Windows_NT)
-	python_executable = py{{cookiecutter.development_python_version}}
-else
-	python_executable = python{{cookiecutter.development_python_version}}
-endif
 
-pypoetry = $(python_executable) -m poetry
+ifndef $(pyexec)
+	pyexec = python{{cookiecutter.development_python_version}}
+endif
+pypoetry = $(pyexec) -m poetry
 
 # Upgrade poetry, setup for installation
 setup:
-	$(python_executable) -m pip install --upgrade poetry
+	$(pyexec) -m pip install --upgrade poetry
 
 # Install project in production mode
 install-production: setup
