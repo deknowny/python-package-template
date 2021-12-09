@@ -30,15 +30,15 @@ jobs:
 
       # Install project with test dependencies
       - name: Installing the current project in dev mode
-        run: make install-dev-test
+        run: make install-dev-test pyexec=python
 
       # Run unit-tests with coverage reporting
       - name: Run Unit-Tests
-        run: make test-ci
+        run: make test-ci pyexec=python
 
       # Upload coverage for the used version
       - name: Upload coverage data to coveralls.io
-        run: poetry run coveralls --service=github
+        run: python -m poetry run coveralls --service=github
         env:
           GITHUB_TOKEN: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}
           COVERALLS_FLAG_NAME: {% raw %}${{ matrix.python-version }}{% endraw %}
@@ -55,7 +55,7 @@ jobs:
       - uses: actions/setup-python@v2
       - name: Finished
         run: |
-          make install-dev-test
-          poetry run coveralls --service=github --finish
+          make install-dev-test pyexec=python
+          python -m poetry run coveralls --service=github --finish
         env:
           GITHUB_TOKEN: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}
