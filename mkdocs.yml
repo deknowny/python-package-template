@@ -20,10 +20,12 @@ theme:
   name: material
   palette:
     - scheme: default
+      primary: brown
       toggle:
         icon: material/lightbulb-outline
         name: Switch to dark mode
     - scheme: slate
+      primary: brown
       toggle:
         icon: material/lightbulb
         name: Switch to light mode
