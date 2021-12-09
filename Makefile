@@ -6,7 +6,7 @@ setup:
 install-docs:
 	python3.8 -m pip install -r docs/requirements.txt
 
-build-docs:
+deploy-docs:
 	python3.8 -m mkdocs gh-deploy -b gh-pages --force
 
 instance:
