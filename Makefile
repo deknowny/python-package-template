@@ -3,6 +3,12 @@
 setup:
 	python3.8 -m pip install --upgrade cookiecutter poetry
 
+install-docs:
+	python3.8 -m pip install -r docs/requirements.txt
+
+build-docs:
+	python3.8 -m mkdocs gh-deploy -b gh-pages --force
+
 instance:
 	rm -rf ./output
 	python3.8 -m cookiecutter . -o output < example_stdin.txt
