@@ -5,7 +5,7 @@ site_name: Pypate
 site_description: Docs for the python-package-template
 
 # URL for pages editing
-repo_url: https://github.com/python-package-template
+repo_url: https://github.com/deknowny/python-package-template
 
 # Branch chosen when routing to repository
 remote_branch: gh-pages
