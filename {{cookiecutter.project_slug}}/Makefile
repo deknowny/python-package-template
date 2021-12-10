@@ -70,7 +70,7 @@ serve-docs:
 
 # Deploy docs command
 deploy-docs:
-	$(pypoetry) run mike deploy --push --update-aliases 0.1 latest
+	$(pypoetry) run mike deploy --push --update-aliases 0.1 latest -b gh-pages
 
 # Run mypy checking
 check:
