@@ -26,8 +26,8 @@ theme:
         icon: material/lightbulb-outline
         name: Switch to dark mode
     - scheme: slate
-      primary: brown
-      accent: cyan
+      primary: blue grey
+      accent: lime
       toggle:
         icon: material/lightbulb
         name: Switch to light mode
