@@ -16,7 +16,7 @@ jobs:
         name: Install mkdocs dependencies
       - run: |
           git config --local user.name "Mike GitHub Pages Deployer"
-          git config --local user.email {{cookiecutter.author_email}
+          git config --local user.email {{cookiecutter.author_email}}
         name: Setting up git for mike
       - run: make deploy-docs
         name: Build docs
