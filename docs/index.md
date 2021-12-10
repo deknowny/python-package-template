@@ -1,2 +1,17 @@
 # Welcome to pypate handbook
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+Pypate is a library template repo with useful tools for developing. Made with cookiecutter
+
+# Features
+* GitHub Actions workflows for CI and CD (tests and PyPI deploy for new tags)
+* Coveralls coverage report
+* Used `poetry` as dependencies and project manager
+* `Pytest` for testing
+* `Makefile` with a lot of useful scripts shortcuts
+* `bumpversion` configured with 3 stages of developing
+* `Pre-commit` with auto style formatting
+* `Mkdocs` with `mkdocs-material` theme. `mike` as version provider
+* Other configured tools:
+  * `Editorcofig`
+  * `Mypy`
+  * `black` & `isort`
+  * `autoflake`

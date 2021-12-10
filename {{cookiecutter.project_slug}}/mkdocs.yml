@@ -27,6 +27,12 @@ theme:
 #      scheme: slate
 #      accent: amber
 
+
+extra:
+  version:
+    provider: mike
+    default: stable
+
 # Material extensions
 markdown_extensions:
   - admonition
