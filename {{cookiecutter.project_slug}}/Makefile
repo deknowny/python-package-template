@@ -1,8 +1,7 @@
 # Used to execute all in one shell
 .ONESHELL:
 
-
-ifndef $(pyexec)
+ifndef pyexec
 	pyexec = python{{cookiecutter.development_python_version}}
 endif
 pypoetry = $(pyexec) -m poetry
