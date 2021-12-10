@@ -1,9 +1,7 @@
 # Used to execute all in one shell
 .ONESHELL:
 
-ifndef pyexec
-	pyexec = python{{cookiecutter.development_python_version}}
-endif
+pyexec = python{{cookiecutter.development_python_version}}
 pypoetry = $(pyexec) -m poetry
 
 # Upgrade poetry, setup for installation
