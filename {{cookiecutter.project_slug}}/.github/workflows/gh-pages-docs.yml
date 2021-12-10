@@ -14,5 +14,7 @@ jobs:
           python-version: {{cookiecutter.development_python_version}}
       - run: make install-dev-docs
         name: Install mkdocs dependencies
+      - run: git config --local user.name "Mike GitHub Pages Deployer"
+        name: Setting up git for mike
       - run: make deploy-docs
         name: Build docs
