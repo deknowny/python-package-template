@@ -1,5 +1,5 @@
 # Title of the site
-site_name: {{cookiecutter.project_slug}}
+site_name: {{cookiecutter.project_name}}
 
 # Description of the site
 site_description: {{cookiecutter.project_description}}
