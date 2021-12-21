@@ -13,6 +13,11 @@ remote_branch: {{cookiecutter.github_main_branch}}
 # Site's content
 nav:
   - Home: index.md
+  - For contributors: contributing.md
+  - User Guide:
+    - Introduction: user-guide/index.md
+  - Advanced Guide:
+      - Introduction: advanced-guide/index.md
 
 
 # Theme preference. Use `mkdocs-material`
