@@ -41,3 +41,10 @@ Python version used in developing
 GitHub username + project name i.e. `deknowny/python-package-template`
 * `README.md` badges
 * `pyproject.toml`
+***
+## *__github_branch_name__*
+GitHub main branch name
+***
+## *__docs_uri__*
+Project site/documentation uri
+* `README.md`
