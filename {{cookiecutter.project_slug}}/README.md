@@ -1,5 +1,6 @@
 # {{cookiecutter.project_name}}
 > {{cookiecutter.project_description}}
+
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/{{cookiecutter.project_slug}})
 ![PyPI - Implementation](https://img.shields.io/pypi/implementation/{{cookiecutter.project_slug}})
 ![PyPI](https://img.shields.io/pypi/v/{{cookiecutter.project_slug}})
