@@ -23,4 +23,4 @@ Or via GitHub
 python -m pip install https://github.com/{{cookiecutter.github_project_name}}/archive/{{cookiecutter.github_main_branch}}.zip
 ```
 # Contributing
-Check out the [CONTRIBUTING.md](./CONTRIBUTING.md)
+Check out [site Contributing section]({{cookiecutter.docs_uri}}contributing/)
