@@ -1,6 +1,8 @@
 # PYPATE (Python Package Template)
 My python library template repo with useful tools for developing. Made with cookiecutter
 
+__*Handbook*__: Soon
+
 # Features
 - [x] GitHub Actions workflows for CI and CD (tests and PyPI deploy for new tags)
 - [x] Coveralls coverage report
@@ -15,7 +17,6 @@ My python library template repo with useful tools for developing. Made with cook
 - [x] `autoflake` configured
 - [x] `Mkdocs` with `Material` theme docs builder
 
-### Soon
+## Projects use this template
+Soon
 
-- [ ] Handbook how to use this template
-- [ ] Read The Docs configured
