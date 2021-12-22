@@ -15,7 +15,7 @@ __*Handbook*__: Soon
 - [x] `mypy` configured
 - [x] `bumpversion` configured
 - [x] `autoflake` configured
-- [x] `Mkdocs` with `Material` theme docs builder
+- [x] `Mkdocs` with `Material` theme docs builder, `mike` for version control
 
 ## Projects use this template
 Soon
