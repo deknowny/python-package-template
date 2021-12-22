@@ -12,7 +12,7 @@ remote_branch: gh-pages
 
 # Site's content
 nav:
-  - Home: ../README.md
+  - Home: index.md
 
 
 # Theme preference. Use `mkdocs-material`
