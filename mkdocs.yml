@@ -43,3 +43,5 @@ extra_css:
 # Material extensions
 markdown_extensions:
   - admonition
+  - pymdownx.tasklist:
+      custom_checkbox: true
