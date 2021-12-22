@@ -7,4 +7,4 @@ user@example.com
 3.7
 deknowny/example
 main
-testlib.github.io
+https://testlib.github.io/latest/
