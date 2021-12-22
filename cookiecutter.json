@@ -7,5 +7,6 @@
     "development_python_version": "3.9",
     "min_supported_version": "{{cookiecutter.development_python_version}}",
     "github_project_name": "user/example",
-    "github_main_branch": "main"
+    "github_main_branch": "main",
+    "docs_uri": "https://{{cookiecutter.github_project_name.split('/')[1]}}.github.io/latest/"
 }

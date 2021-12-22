@@ -6,6 +6,8 @@
 
 {{cookiecutter.project_description}}
 
+__**Check out documentation**__: [{{cookiecutter.docs_uri}}]({{cookiecutter.docs_uri}})
+
 # Features
 In developing now. Will be later
 ## Overview
@@ -22,5 +24,3 @@ python -m pip install https://github.com/{{cookiecutter.github_project_name}}/ar
 ```
 # Contributing
 Check out the [CONTRIBUTING.md](./CONTRIBUTING.md)
-
-

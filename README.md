@@ -13,11 +13,9 @@ My python library template repo with useful tools for developing. Made with cook
 - [x] `mypy` configured
 - [x] `bumpversion` configured
 - [x] `autoflake` configured
+- [x] `Mkdocs` with `Material` theme docs builder
+
 ### Soon
-- [ ] `Mkdocs` with `Material` theme docs builder
+
 - [ ] Handbook how to use this template
 - [ ] Read The Docs configured
-
-
-##
-
