@@ -1,6 +1,3 @@
-# Used to execute all in one shell
-.ONESHELL:
-
 pyexec = python{{cookiecutter.development_python_version}}
 pypoetry = $(pyexec) -m poetry
 
@@ -45,7 +42,9 @@ install-dev-test: setup
 # Reformat code style
 format:
 	$(pypoetry) run black {{ cookiecutter.project_slug }} && \
+	git add -u && \
 	$(pypoetry) run isort {{ cookiecutter.project_slug }} && \
+	git add -u && \
 	$(pypoetry) run autoflake \
 		--ignore-init-module-imports \
 		--remove-unused-variables \
