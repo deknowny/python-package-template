@@ -13,6 +13,9 @@ remote_branch: gh-pages
 # Site's content
 nav:
   - Home: index.md
+  - User Guide:
+    - Introduction: user-guide/index.md
+    
 
 
 # Theme preference. Use `mkdocs-material`
