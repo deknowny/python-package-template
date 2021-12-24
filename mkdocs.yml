@@ -15,6 +15,7 @@ nav:
   - Home: index.md
   - User Guide:
     - Introduction: user-guide/index.md
+    - First init: user-guide/first-init.md
     
 
 
