@@ -3,7 +3,7 @@ import subprocess
 
 def check_tool_exists(command):
     try:
-        subprocess.check_call([command, "--help"])
+        subprocess.check_call([command, "--help"], stdout=subprocess.PIPE)
     except subprocess.CalledProcessError:
         print("ERROR: `{}` is required".format(command))
         exit(1)
