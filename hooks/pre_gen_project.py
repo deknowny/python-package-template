@@ -4,8 +4,8 @@ try:
     import pymake
 except ImportError:
     print(
-        "\n\nError: `py-make` is required. "
-        "Run `{} -m pip install py-make`".format(
+        "\n\nERROR: `py-make` is required. "
+        "Run `{} -m pip install py-make`\n".format(
             sys.executable
         )
     )
