@@ -50,5 +50,13 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.superfences
   - pymdownx.keys
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
   - pymdownx.tasklist:
       custom_checkbox: true
+
+
+extra:
+  version:
+    provider: mike
+    default: latest

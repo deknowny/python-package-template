@@ -14,5 +14,9 @@ jobs:
           python-version: 3.8
       - run: make install-docs
         name: Install mkdocs dependencies
-      - run: make deploy-docs
-        name: Build docs
+      - name: Build docs
+        run: |
+          git config --local user.name ci-bot
+          git config --local user.email ci-bot@example.com
+          git fetch origin gh-pages --depth=1
+          make deploy-docs

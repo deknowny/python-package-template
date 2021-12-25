@@ -46,7 +46,7 @@ theme:
 extra:
   version:
     provider: mike
-    default: stable
+    default: latest
 
 # Material extensions
 markdown_extensions:
