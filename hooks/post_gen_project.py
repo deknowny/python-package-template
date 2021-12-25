@@ -1,4 +1,3 @@
-import sys
 import os
 
 
@@ -9,5 +8,5 @@ os.system(
     "git commit --allow-empty -m \"Initial commit for GH Pages\" && "
     "git push origin gh-pages -f && "
     "git checkout -b {{cookiecutter.github_main_branch}} && "
-    "{} -m pymake install-dev-all".format(sys.executable)
+    "make install-dev-all"
 )
