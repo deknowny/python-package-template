@@ -7,7 +7,7 @@ install-docs:
 	python3.8 -m pip install -r docs/requirements.txt
 
 deploy-docs:
-	python3.8 -m run mike deploy --push --update-aliases 0.1 latest -b gh-pages
+	python3.8 -m mike deploy --push --force --update-aliases 0.1 latest -b gh-pages
 
 instance:
 	rm -rf ./output
