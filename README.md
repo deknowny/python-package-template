@@ -1,7 +1,7 @@
 # PYPATE (Python Package Template)
 My python library template repo with useful tools for developing. Made with cookiecutter
 
-__*Handbook*__: [https://deknowny.github.io/python-package-template/](https://deknowny.github.io/python-package-template/)
+__*Handbook*__: [https://deknowny.github.io/python-package-template/latest/](https://deknowny.github.io/python-package-template/latest/)
 
 # Features
 - [x] GitHub Actions workflows for CI and CD (tests and PyPI deploy for new tags)
