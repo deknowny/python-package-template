@@ -9,16 +9,6 @@ setup:
 install-production: setup
 	$(pypoetry) install --no-dev
 
-# Setup the project firstly
-firstly-init: setup
-	git init && \
-	git remote add origin https://github.com/{{cookiecutter.github_project_name}} && \
-	git checkout -b gh-pages
-	git commit --allow-empty -m "Initial commit fo GH Pages"
-	git push origin gh-pages -f
-	git checkout -b {{cookiecutter.github_main_branch}}
-	make install-dev-all
-
 # Install project in development mode
 install-dev-all: setup
 	$(pypoetry) install -E dev-all && $(pypoetry) run pre-commit install
