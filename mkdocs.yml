@@ -13,10 +13,14 @@ remote_branch: gh-pages
 # Site's content
 nav:
   - Home: index.md
-  - User Guide:
+  - Step-by-step User Guide:
     - Introduction: user-guide/index.md
     - First init: user-guide/first-init.md
-    
+    - About Makefile: user-guide/makefile.md
+    - About Poetry: user-guide/poetry.md
+  - Reference:
+    - Introduction: reference/index.md
+    - Manage dependencies: reference/manage-dependencies.md
 
 
 # Theme preference. Use `mkdocs-material`
