@@ -1,53 +1,52 @@
-pyexec = python{{cookiecutter.development_python_version}}
-pypoetry = $(pyexec) -m poetry
+# Python executable path
+python_exec = python{{cookiecutter.development_python_version}}
 
-# Upgrade poetry, setup for installation
-setup:
-	$(pyexec) -m pip install --upgrade poetry
+# Poetry executable path
+poetry_exec = $(python_exec) -m poetry
 
 # Install project in production mode
 install-production: setup
-	$(pypoetry) install --no-dev
+	$(poetry_exec) install --no-dev
 
-# Install project in development mode
+# Install the project in a development mode
 install-dev-all: setup
-	$(pypoetry) install -E dev-all && $(pypoetry) run pre-commit install
+	$(poetry_exec) install -E dev-all && $(poetry_exec) run pre-commit install
 
 # Install project with dev style dependencies
 install-dev-style: setup
-	$(pypoetry) install -E dev-style && $(pypoetry) run pre-commit install
+	$(poetry_exec) install -E dev-style && $(poetry_exec) run pre-commit install
 
 # Install static checkers (i.e. mypy)
 install-dev-check: setup
-	$(pypoetry) install -E dev-check
+	$(poetry_exec) install -E dev-check
 
 # Install docs builder dependencies
 install-dev-docs: setup
-	$(pypoetry) install -E dev-docs
+	$(poetry_exec) install -E dev-docs
 
 # Install tests tools
 install-dev-test: setup
-	$(pypoetry) install -E dev-test
+	$(poetry_exec) install -E dev-test
 
 # Reformat code style
 format:
-	$(pypoetry) run black {{ cookiecutter.project_slug }} && \
+	$(poetry_exec) run black {{ cookiecutter.project_slug }} && \
 	git add -u && \
-	$(pypoetry) run isort {{ cookiecutter.project_slug }} && \
+	$(poetry_exec) run isort {{ cookiecutter.project_slug }} && \
 	git add -u && \
-	$(pypoetry) run autoflake \
+	$(poetry_exec) run autoflake \
 		--ignore-init-module-imports \
 		--remove-unused-variables \
 		--recursive \
 		--in-place {{ cookiecutter.project_slug }} tests
 
-# Run tests local 
+# Run tests locally
 test:
-	$(pypoetry) run pytest tests --cov={{cookiecutter.project_slug}} --cov-report=html
+	$(poetry_exec) run pytest tests --cov={{cookiecutter.project_slug}} --cov-report=html
 
 # Tests command for CI with .coveragerc report
 test-ci:
-	$(pypoetry) run coverage run --source={{cookiecutter.project_slug}} -m pytest tests
+	$(poetry_exec) run coverage run --source={{cookiecutter.project_slug}} -m pytest tests
 
 # Serve coverage report
 serve-cov:
@@ -55,12 +54,12 @@ serve-cov:
 
 # Run hot-reloaded docs server
 serve-docs:
-	$(pypoetry) run mkdocs serve
+	$(poetry_exec) run mkdocs serve
 
 # Deploy docs command
 deploy-docs:
-	$(pypoetry) run mike deploy --push --update-aliases 0.1 latest -b gh-pages
+	$(poetry_exec) run mike deploy --push --update-aliases 0.1 latest -b gh-pages
 
 # Run mypy checking
 check:
-	$(pypoetry) run mypy
+	$(poetry_exec) run mypy
