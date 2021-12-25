@@ -38,6 +38,10 @@ mkdocs-material = {optional = true, version="^8.0.2"}
 mike = {optional = true, version="^1.1.2"}
 
 [tool.poetry.extras]
+# Ordinary extra dependencies
+all = []
+
+# Development etra dependencies
 dev-style = ["black", "isort", "pre-commit", "autoflake"]
 dev-test = ["pytest", "pytest-cov", "coveralls", "coverage"]
 dev-check = ["mypy"]
