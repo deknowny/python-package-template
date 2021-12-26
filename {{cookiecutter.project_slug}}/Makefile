@@ -6,7 +6,7 @@ poetry_exec = $(python_exec) -m poetry
 
 # Upgrade poetry, setup for installation
 setup:
-	$(pyexec) -m pip install --upgrade poetry
+	$(python_exec) -m pip install --upgrade poetry
 
 # Install project in production mode
 install-production: setup
