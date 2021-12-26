@@ -13,7 +13,7 @@ _Development_ dependencies are installed when your library is installed by a con
 
     For example, some dependencies are required to build documentation. You can view `dev-docs` group of dependencies in `pyproject.toml`. If you need to install only them as optional you can execute this
 
-    ```shell
+    ```shell title="Terminal"
     pip install library[dev-docs]
     ```
 
@@ -26,7 +26,7 @@ _Development_ dependencies are installed when your library is installed by a con
 
     Any group from dev dependencies could be also installed with `make` out of library source
 
-    ```shell
+    ```shell title="Terminal"
     make install-dev-docs
     ```
 
@@ -53,14 +53,14 @@ _Development_ dependencies are installed when your library is installed by a con
 
 # Add a non-optional dependency
 For example, you want to add a `requests` as dependency for project, so it should be installed when your library is installed
-```shell
+```shell title="Terminal"
 poetry add requests
 ```
 Now when someone installs your library, `requests` will be installed too
 
 # Add an optional dependency
 For example, you want to optimize JSON parsing in your project with `orjson` library (as it is written on Rust and requires `rustc`). You can do not force user install `orjson` and keep `orjson` as optional
-```shell
+```shell title="Terminal"
 poetry add orjson --optional
 ```
 As it's an optional, you should add it to a special group of optional dependencies.
@@ -73,7 +73,7 @@ orjson = {optional = true, version="^3.6.5"}
 ...
 ```
 
-And now add it to a new group. Let's call it `fast-json`
+And now add the dependency to a new group. Let's call it `fast-json`
 ```toml title="pyproject.toml" hl_lines="6"
 [tool.poetry.extras]
 # Ordinary extra dependencies
@@ -93,4 +93,52 @@ all = ["orjson"]
 # Fast and optimized JSON parsers
 fast-json = ["orjson"]
 ...
+```
+# Add a non-optional dev dependency
+```shell title="Terminal"
+poetry add pytest --dev
+```
+`pytest` will be installed every time your library is installed in development mode
+
+# Add an optional dev dependency
+```shell title="Terminal"
+poetry add pytest-asyncio --optional
+```
+It looks like optional production dependency, but now we should change `extra` section in another way.
+
+All optional development dependencies groups marked with prefix `dev-`. So our `pytest-asyncio` should be addd in such groups.
+
+Check out `pyproject.toml`. There is an existed group of optional dependencies used for testing (as `pytest-asyncio` too)
+
+```toml title="pyproject.toml" hl_lines="3"
+[tool.poetry.extra]
+...
+dev-test = ["pytest", "pytest-cov", "coveralls", "coverage"]
+```
+
+Now put it here
+
+```toml title="pyproject.toml" hl_lines="3"
+[tool.poetry.extra]
+...
+dev-test = ["pytest-asyncio", "pytest", "pytest-cov", "coveralls", "coverage"]
+```
+
+***
+And there is also a `dev-all` group that need to be modified
+
+```toml title="pyproject.toml" hl_lines="7"
+[tool.poetry.extra]
+...
+dev-test = ["pytest-asyncio", "pytest", "pytest-cov", "coveralls", "coverage"]
+...
+dev-all = [
+    "black", "isort", "pre-commit",
+    "pytest", "pytest-cov", "pytest-asyncio"
+    "coveralls", "coverage",
+    "mypy",
+    "bumpversion",
+    "autoflake",
+    "mkdocs", "mkdocs-material", "mike"
+]
 ```

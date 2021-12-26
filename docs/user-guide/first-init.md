@@ -36,7 +36,7 @@ Required tools:
 Make sure you have them installed and added in your `PATH`
 ***
 
-```shell
+```shell title="Terminal"
 cookiecutter gh:deknowny/python-package-template -o .
 ```
 
