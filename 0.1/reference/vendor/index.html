@@ -15,7 +15,7 @@
     
     
       
-        <title>First init - Pypate</title>
+        <title>About vendor dependencies - Pypate</title>
       
     
     
@@ -66,11 +66,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#1-come-up-with-library-name" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -106,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              First init
+              About vendor dependencies
             
           </span>
         </div>
@@ -251,14 +246,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
       
       
@@ -281,7 +274,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../user-guide/" class="md-nav__link">
         Introduction
       </a>
     </li>
@@ -293,21 +286,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../user-guide/first-init/" class="md-nav__link">
         First init
       </a>
-      
     </li>
   
 
@@ -319,7 +302,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../makefile/" class="md-nav__link">
+      <a href="../../user-guide/makefile/" class="md-nav__link">
         About Makefile
       </a>
     </li>
@@ -333,7 +316,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../poetry/" class="md-nav__link">
+      <a href="../../user-guide/poetry/" class="md-nav__link">
         About Poetry
       </a>
     </li>
@@ -353,12 +336,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -381,7 +366,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         Introduction
       </a>
     </li>
@@ -395,7 +380,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/manage-dependencies/" class="md-nav__link">
+      <a href="../manage-dependencies/" class="md-nav__link">
         Manage dependencies
       </a>
     </li>
@@ -407,11 +392,19 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../reference/vendor/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         About vendor dependencies
       </a>
+      
     </li>
   
 
@@ -430,89 +423,19 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
-<a href="https://github.com/deknowny/python-package-template/edit/master/docs/user-guide/first-init.md" title="Edit this page" class="md-content__button md-icon">
+<a href="https://github.com/deknowny/python-package-template/edit/master/docs/reference/vendor.md" title="Edit this page" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
 </a>
 
 
-<h1 id="1-come-up-with-library-name">1) Come up with library name</h1>
-<p>Firstly, you need think about library name. Keep in mind that your name should be unique and does not exist yet. We will call it <code>sumsub</code> but you should think about your own. You can check that your name is still free on PyPI search panel.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Try avoiding such parts in library name such as <code>lib</code> or <code>py</code>. Anyone who will see or use <code class="highlight"><span class="kn">import</span> <span class="o">&lt;</span><span class="n">your</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span></code> already knows that it is a library for python. Name should be short and sensed.</p>
-<p>Also by PEP8 library name should not contain underscores (<code>_</code>)</p>
-</div>
-<p><img alt="Sure no such lib still created" src="../../assets/sure-no-such-lib.png" /></p>
-<h1 id="2-install-cookiecutter">2) Install <code>cookiecutter</code></h1>
-<p>Secondly, make sure you have installed the latest version of  <code>cookiecutter</code>
-<div class="highlight"><pre><span></span><code>python -m pip install --upgrade cookiecutter
-</code></pre></div></p>
-<div class="admonition faq">
-<p class="admonition-title">Faq</p>
-<p><code>cookiecutter</code> is project templating tool allows creating "copies" by a template files structure and template strings inside the project so for best experience we allow you configured some parameters like project name, description, etc. It easily can be done with <code>cookiecutter</code></p>
-</div>
-<p>Now you are ready to create your own library! <strong>Remind</strong> you in this tutorial we are going to create a library that summarize and subtract numbers.</p>
-<h1 id="3-create-a-remote-repository">3) Create a remote repository</h1>
-<p>Your library code will be hosted on a remote repository (GitHub preferred). So now we should create it</p>
-<p><img alt="Creating new repository" src="../../assets/new-repository.png" /></p>
-<h1 id="4-create-a-project-by-the-template">4) Create a project by the template</h1>
-<p>This command will create a directory with your library code. Execute this in a directory you want the project will exist</p>
-<p>Required tools:</p>
-<ul>
-<li>Git</li>
-<li>Make</li>
-</ul>
-<p>Make sure you have them installed and added in your <code>PATH</code></p>
-<hr />
-<div class="highlight"><span class="filename">Terminal</span><pre><span></span><code>cookiecutter gh:deknowny/python-package-template -o .
-</code></pre></div>
-<div class="admonition missing">
-<p class="admonition-title">Missing</p>
-<p>If you get an error like <code>command cookiecutter cannot be found</code>
-try executing <code>python -m cookiecutter gh:deknowny/python-package-template -o .</code></p>
-</div>
-<p>You will be asked some prompts</p>
-<div class="admonition question">
-<p class="admonition-title">Question</p>
-<p>If you see a prompt like <code>Is it okay to delete and re-download it?</code> press <span class="keys"><kbd class="key-enter">Enter</kbd></span></p>
-</div>
-<ul>
-<li><code>project_name</code>: Provide project name here (we will set it to <code>Sum Sub Library</code>)</li>
-<li><code>project_slug</code>: Press <span class="keys"><kbd class="key-enter">Enter</kbd></span> if it's okay. It will be used as PyPI package name so make sure it's unique! (we will use <code>sumsub</code>)</li>
-<li><code>project_description</code>: Provide project description. (we will set it to <code>My first library for addition and subtraction numbers!</code>)</li>
-<li><code>author_name</code>: Provide you full name here</li>
-<li><code>author_email</code>: Provide your valid email</li>
-<li><code>development_python_version</code>: As you prefer (we will use <code>3.9</code>)</li>
-<li><code>min_supported_version</code>: We just add functions for summarize and subtract numbers. <code>3.6</code> will be okay</li>
-<li><code>github_project_name</code>: Provide GitHub project name. It concatenated with your GitHub username and repository name. If your username is <code>janedoe</code> and library name is <code>mylib</code> enter <code>janedoe/mylib</code> here</li>
-<li><code>github_main_branch</code>: Recommend to use <code>main</code>, but if you have an old version of Git and <code>master</code> is often used by you, keep it for your convenience</li>
-<li><code>docs_uri</code>: <span class="keys"><kbd class="key-enter">Enter</kbd></span>. We will use GitHub pages for deploy</li>
-</ul>
-<p>We will discuss every field more deeply later when the field has straight influence on what we are doing at the moment</p>
-<p>Next few sections will introduce you to some features</p>
+  <h1>About vendor dependencies</h1>
+
+
 
               
             </article>
@@ -526,7 +449,7 @@ try executing <code>python -m cookiecutter gh:deknowny/python-package-template -
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Introduction" rel="prev">
+        <a href="../manage-dependencies/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Manage dependencies" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -535,26 +458,11 @@ try executing <code>python -m cookiecutter gh:deknowny/python-package-template -
               <span class="md-footer__direction">
                 Previous
               </span>
-              Introduction
+              Manage dependencies
             </div>
           </div>
         </a>
       
-      
-        
-        <a href="../makefile/" class="md-footer__link md-footer__link--next" aria-label="Next: About Makefile" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              About Makefile
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
       
     </nav>
   
