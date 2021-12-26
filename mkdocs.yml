@@ -21,6 +21,7 @@ nav:
   - Reference:
     - Introduction: reference/index.md
     - Manage dependencies: reference/manage-dependencies.md
+    - About vendor dependencies: reference/vendor.md
 
 
 # Theme preference. Use `mkdocs-material`
