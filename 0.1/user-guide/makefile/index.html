@@ -430,7 +430,7 @@
 use with compiler quite long and can contain some boilerplate parts.</p>
 <p>But actually <code>make</code> can be viewed as commands shortcuts tool for Python too. Perhaps you see <code>scripts/</code> folder in different open source projects, and <code>Makefile</code> is a pretty replacement for this. It's easier to customize python &amp; poetry version and easier to read &amp; edit scripts code with it. It's like an <code>npm run</code> or <code>yarn run</code> logic.</p>
 <p>For example, instead of running this all the time (it makes your code prettier i.e. remove excess indentations, sorting imports...):
-<div class="highlight"><pre><span></span><code>python -m poetry run black <span class="o">{{</span> cookiecutter.project_slug <span class="o">}}</span> <span class="o">&amp;&amp;</span> <span class="se">\</span>
+<div class="highlight"><span class="filename">Terminal</span><pre><span></span><code>python -m poetry run black <span class="o">{{</span> cookiecutter.project_slug <span class="o">}}</span> <span class="o">&amp;&amp;</span> <span class="se">\</span>
     git add -u <span class="o">&amp;&amp;</span> <span class="se">\</span>
     python -m poetry run isort <span class="o">{{</span> cookiecutter.project_slug <span class="o">}}</span> <span class="o">&amp;&amp;</span> <span class="se">\</span>
     git add -u <span class="o">&amp;&amp;</span> <span class="se">\</span>
@@ -441,7 +441,7 @@ use with compiler quite long and can contain some boilerplate parts.</p>
         --in-place <span class="o">{{</span> cookiecutter.project_slug <span class="o">}}</span> tests
 </code></pre></div>
 You can just run this:
-<div class="highlight"><pre><span></span><code>make format
+<div class="highlight"><span class="filename">Terminal</span><pre><span></span><code>make format
 </code></pre></div></p>
 <p>So the template contains many useful shortcuts in <code>Makefile</code>. They are full commented, so you can just read everything about them <a href="https://github.com/deknowny/python-package-template/blob/main/%7B%7Bcookiecutter.project_slug%7D%7D/Makefile">from source code of the Makefile</a> or just in <code>Makefile</code> generated in your project. They all are discussed at the corresponding sections.</p>
 

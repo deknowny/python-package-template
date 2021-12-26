@@ -442,6 +442,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#add-a-non-optional-dev-dependency" class="md-nav__link">
+    Add a non-optional dev dependency
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-an-optional-dev-dependency" class="md-nav__link">
+    Add an optional dev dependency
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -509,6 +523,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#add-a-non-optional-dev-dependency" class="md-nav__link">
+    Add a non-optional dev dependency
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-an-optional-dev-dependency" class="md-nav__link">
+    Add an optional dev dependency
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -537,14 +565,14 @@
 <p class="admonition-title">How does optional dependencies work?</p>
 <p>All optional dependencies divide into <strong>groups</strong> by a developer</p>
 <p>For example, some dependencies are required to build documentation. You can view <code>dev-docs</code> group of dependencies in <code>pyproject.toml</code>. If you need to install only them as optional you can execute this</p>
-<div class="highlight"><pre><span></span><code>pip install library<span class="o">[</span>dev-docs<span class="o">]</span>
+<div class="highlight"><span class="filename">Terminal</span><pre><span></span><code>pip install library<span class="o">[</span>dev-docs<span class="o">]</span>
 </code></pre></div>
 <p>Separate by a comma optional dependencies in brackets (<code>[]</code>)</p>
 <hr />
 <p>Anyway, you do not need to install any development dependencies when you install a package
 from <code>PyPI</code> as a user. It's for an example</p>
 <p>Any group from dev dependencies could be also installed with <code>make</code> out of library source</p>
-<div class="highlight"><pre><span></span><code>make install-dev-docs
+<div class="highlight"><span class="filename">Terminal</span><pre><span></span><code>make install-dev-docs
 </code></pre></div>
 </div>
 <details class="question">
@@ -568,12 +596,12 @@ takes quite long time so division is required</p>
 </div>
 <h1 id="add-a-non-optional-dependency">Add a non-optional dependency</h1>
 <p>For example, you want to add a <code>requests</code> as dependency for project, so it should be installed when your library is installed
-<div class="highlight"><pre><span></span><code>poetry add requests
+<div class="highlight"><span class="filename">Terminal</span><pre><span></span><code>poetry add requests
 </code></pre></div>
 Now when someone installs your library, <code>requests</code> will be installed too</p>
 <h1 id="add-an-optional-dependency">Add an optional dependency</h1>
 <p>For example, you want to optimize JSON parsing in your project with <code>orjson</code> library (as it is written on Rust and requires <code>rustc</code>). You can do not force user install <code>orjson</code> and keep <code>orjson</code> as optional
-<div class="highlight"><pre><span></span><code>poetry add orjson --optional
+<div class="highlight"><span class="filename">Terminal</span><pre><span></span><code>poetry add orjson --optional
 </code></pre></div>
 As it's an optional, you should add it to a special group of optional dependencies.</p>
 <p>Your <code>pyproject.toml</code> looks like this
@@ -582,7 +610,7 @@ As it's an optional, you should add it to a special group of optional dependenci
 <span class="n">orjson</span> <span class="o">=</span> <span class="p">{</span><span class="n">optional</span> <span class="o">=</span> <span class="n">true</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s">&quot;^3.6.5&quot;</span><span class="p">}</span>
 <span class="p">...</span>
 </code></pre></div></p>
-<p>And now add it to a new group. Let's call it <code>fast-json</code>
+<p>And now add the dependency to a new group. Let's call it <code>fast-json</code>
 <div class="highlight"><span class="filename">pyproject.toml</span><pre><span></span><code><span class="k">[tool.poetry.extras]</span>
 <span class="c1"># Ordinary extra dependencies</span>
 <span class="n">all</span> <span class="o">=</span> <span class="p">[]</span>
@@ -600,6 +628,41 @@ As it's an optional, you should add it to a special group of optional dependenci
 <span class="n">fast-json</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;orjson&quot;</span><span class="p">]</span>
 <span class="p">...</span>
 </code></pre></div></p>
+<h1 id="add-a-non-optional-dev-dependency">Add a non-optional dev dependency</h1>
+<p><div class="highlight"><span class="filename">Terminal</span><pre><span></span><code>poetry add pytest --dev
+</code></pre></div>
+<code>pytest</code> will be installed every time your library is installed in development mode</p>
+<h1 id="add-an-optional-dev-dependency">Add an optional dev dependency</h1>
+<p><div class="highlight"><span class="filename">Terminal</span><pre><span></span><code>poetry add pytest-asyncio --optional
+</code></pre></div>
+It looks like optional production dependency, but now we should change <code>extra</code> section in another way.</p>
+<p>All optional development dependencies groups marked with prefix <code>dev-</code>. So our <code>pytest-asyncio</code> should be addd in such groups.</p>
+<p>Check out <code>pyproject.toml</code>. There is an existed group of optional dependencies used for testing (as <code>pytest-asyncio</code> too)</p>
+<div class="highlight"><span class="filename">pyproject.toml</span><pre><span></span><code><span class="k">[tool.poetry.extra]</span>
+<span class="p">...</span>
+<span class="hll"><span class="n">dev-test</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;pytest&quot;</span><span class="p">,</span> <span class="s">&quot;pytest-cov&quot;</span><span class="p">,</span> <span class="s">&quot;coveralls&quot;</span><span class="p">,</span> <span class="s">&quot;coverage&quot;</span><span class="p">]</span>
+</span></code></pre></div>
+<p>Now put it here</p>
+<div class="highlight"><span class="filename">pyproject.toml</span><pre><span></span><code><span class="k">[tool.poetry.extra]</span>
+<span class="p">...</span>
+<span class="hll"><span class="n">dev-test</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;pytest-asyncio&quot;</span><span class="p">,</span> <span class="s">&quot;pytest&quot;</span><span class="p">,</span> <span class="s">&quot;pytest-cov&quot;</span><span class="p">,</span> <span class="s">&quot;coveralls&quot;</span><span class="p">,</span> <span class="s">&quot;coverage&quot;</span><span class="p">]</span>
+</span></code></pre></div>
+<hr />
+<p>And there is also a <code>dev-all</code> group that need to be modified</p>
+<div class="highlight"><span class="filename">pyproject.toml</span><pre><span></span><code><span class="k">[tool.poetry.extra]</span>
+<span class="p">...</span>
+<span class="n">dev-test</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;pytest-asyncio&quot;</span><span class="p">,</span> <span class="s">&quot;pytest&quot;</span><span class="p">,</span> <span class="s">&quot;pytest-cov&quot;</span><span class="p">,</span> <span class="s">&quot;coveralls&quot;</span><span class="p">,</span> <span class="s">&quot;coverage&quot;</span><span class="p">]</span>
+<span class="p">...</span>
+<span class="n">dev-all</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s">&quot;black&quot;</span><span class="p">,</span> <span class="s">&quot;isort&quot;</span><span class="p">,</span> <span class="s">&quot;pre-commit&quot;</span><span class="p">,</span>
+<span class="hll">    <span class="s">&quot;pytest&quot;</span><span class="p">,</span> <span class="s">&quot;pytest-cov&quot;</span><span class="p">,</span> <span class="s">&quot;pytest-asyncio&quot;</span>
+</span>    <span class="s">&quot;coveralls&quot;</span><span class="p">,</span> <span class="s">&quot;coverage&quot;</span><span class="p">,</span>
+    <span class="s">&quot;mypy&quot;</span><span class="p">,</span>
+    <span class="s">&quot;bumpversion&quot;</span><span class="p">,</span>
+    <span class="s">&quot;autoflake&quot;</span><span class="p">,</span>
+    <span class="s">&quot;mkdocs&quot;</span><span class="p">,</span> <span class="s">&quot;mkdocs-material&quot;</span><span class="p">,</span> <span class="s">&quot;mike&quot;</span>
+<span class="p">]</span>
+</code></pre></div>
 
               
             </article>
