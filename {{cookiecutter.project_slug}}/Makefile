@@ -4,6 +4,10 @@ python_exec = python{{cookiecutter.development_python_version}}
 # Poetry executable path
 poetry_exec = $(python_exec) -m poetry
 
+# Upgrade poetry, setup for installation
+setup:
+	$(pyexec) -m pip install --upgrade poetry
+
 # Install project in production mode
 install-production: setup
 	$(poetry_exec) install --no-dev
