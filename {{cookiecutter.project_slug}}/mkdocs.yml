@@ -43,6 +43,9 @@ theme:
     - header.autohide
 
 
+extra_css:
+  - stylesheets/slate.css
+
 extra:
   version:
     provider: mike
