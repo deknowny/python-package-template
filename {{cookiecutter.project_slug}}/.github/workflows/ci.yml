@@ -34,7 +34,7 @@ jobs:
 
       # Run unit-tests with coverage reporting
       - name: Run Unit-Tests
-        run: make test-ci pyexec=python
+        run: make test-ci python_exec=python
 
       # Upload coverage for the used version
       - name: Upload coverage data to coveralls.io
@@ -55,7 +55,7 @@ jobs:
       - uses: actions/setup-python@v2
       - name: Finished
         run: |
-          make install-dev-test pyexec=python
+          make install-dev-test python_exec=python
           python -m poetry run coveralls --service=github --finish
         env:
           GITHUB_TOKEN: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}
