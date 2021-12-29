@@ -42,7 +42,8 @@ format:
 		--ignore-init-module-imports \
 		--remove-unused-variables \
 		--recursive \
-		--in-place {{ cookiecutter.project_slug }} tests
+		--in-place {{ cookiecutter.project_slug }} tests && \
+	git add -u &&
 
 # Run tests locally
 test:
