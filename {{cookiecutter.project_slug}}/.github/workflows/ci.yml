@@ -30,7 +30,7 @@ jobs:
 
       # Install project with test dependencies
       - name: Installing the current project in dev mode
-        run: make install-dev-test pyexec=python
+        run: make install-dev-test python_exec=python
 
       # Run unit-tests with coverage reporting
       - name: Run Unit-Tests
