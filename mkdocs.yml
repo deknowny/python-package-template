@@ -18,6 +18,7 @@ nav:
     - First init: user-guide/first-init.md
     - About Makefile: user-guide/makefile.md
     - About Poetry: user-guide/poetry.md
+    - About environments and virtaulenv: user-guide/environments.md
   - Reference:
     - Introduction: reference/index.md
     - Manage dependencies: reference/manage-dependencies.md
@@ -57,6 +58,8 @@ markdown_extensions:
   - pymdownx.keys
   - pymdownx.highlight
   - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
 
