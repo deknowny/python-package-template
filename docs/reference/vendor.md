@@ -7,7 +7,7 @@ It cannot be placed in `.venv` anymore. All dependencies' source code usually pl
 ```shell title="Terminal"
 git add submodule {repository url} vendor/{repo name}
 ```
-Submodules are correctly handled by Git when you do commit. It recognized as another repository, not just an ordinary folder. It is still a Git repository that can be pulled, for example.  
+Submodule is correctly handled by Git when you do commit. It is recognized as another repository, not just an ordinary folder. It is still a Git repository that can be pulled, for example.  
 
 !!! Hint
     Recommend you add such dependencies from your own fork of the original repository
