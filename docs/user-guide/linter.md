@@ -1,0 +1,1 @@
+A **linter** is a tool to _statically_ analyze your code and report for problems. For example, you have a function that receives 1 argument, but you accidentally passed 2. Such static analyser can report you about problems without running your code.
