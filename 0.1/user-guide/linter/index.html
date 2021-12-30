@@ -15,7 +15,7 @@
     
     
       
-        <title>Formatters - Pypate</title>
+        <title>Linter - Pypate</title>
       
     
     
@@ -66,11 +66,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#black" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -106,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Formatters
+              Linter
             
           </span>
         </div>
@@ -251,14 +246,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
       
       
@@ -349,62 +342,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Formatters
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../formatters/" class="md-nav__link">
         Formatters
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#black" class="md-nav__link">
-    black
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#isort" class="md-nav__link">
-    isort
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#autoflake" class="md-nav__link">
-    autoflake
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -513,106 +455,19 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#black" class="md-nav__link">
-    black
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#isort" class="md-nav__link">
-    isort
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#autoflake" class="md-nav__link">
-    autoflake
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
-<a href="https://github.com/deknowny/python-package-template/edit/master/docs/user-guide/formatters.md" title="Edit this page" class="md-content__button md-icon">
+<a href="https://github.com/deknowny/python-package-template/edit/master/docs/user-guide/linter.md" title="Edit this page" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
 </a>
 
 
-  <h1>Formatters</h1>
+  <h1>Linter</h1>
 
-<p>A <strong>formatter</strong> is a tool to format your code style automatically: remove unused imports or add new lines at the end of file etc.</p>
-<p>Tools are setuped in the template are described below</p>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p>You can run <strong>all</strong> these formatters with <code>make format</code>. Do it when you do not want to waste time on code formatting by a hard</p>
-</div>
-<h2 id="black"><code>black</code></h2>
-<p>Black is a formatter for your code style.</p>
-<p>Suppose you have a file</p>
-<div class="highlight"><span class="filename">file.py</span><pre><span></span><code><span class="k">def</span>  <span class="nf">foo</span><span class="p">(</span><span class="n">a</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span>  <span class="mi">1</span><span class="p">):</span>
-    <span class="nb">print</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">bar</span><span class="p">():</span> <span class="k">pass</span>
-</code></pre></div>
-<p>Run this
-<div class="highlight"><span class="filename">Terminal</span><pre><span></span><code>black file.py
-</code></pre></div></p>
-<p>and get this
-<div class="highlight"><span class="filename">file.py</span><pre><span></span><code><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">bar</span><span class="p">():</span>
-    <span class="k">pass</span>
-</code></pre></div></p>
-<p>It's useful for adding new lines between definitions and breaking too long lines of code, but it does not fix everything by PEP8. It is just for boilerplate fixes. Anyway, you should know PEP8 by hard so there won't be any issues with naming. If you are not sure with about your PEP8 knowledge, check out <code>pylint</code>.</p>
-<h2 id="isort"><code>isort</code></h2>
-<p><code>isort</code> is a formatter to fix your imports order to alphabet order and to divide imports to sections by PEP8</p>
-<p>The same way as <code>black</code> this</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pytest</span>
-<span class="kn">import</span> <span class="nn">pathlib</span><span class="o">,</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">sumsub</span> <span class="kn">import</span> <span class="nb">sum</span>
-</code></pre></div>
-<p>Converted to
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">pathlib</span>
-
-<span class="kn">from</span> <span class="nn">sumsub</span> <span class="kn">import</span> <span class="nb">sum</span>
-
-<span class="kn">import</span> <span class="nn">pytest</span>
-</code></pre></div>
-It correctly divides into three sections of <strong>built-in</strong>, <strong>local</strong>, and <strong>third-party</strong> imports </p>
-<h2 id="autoflake"><code>autoflake</code></h2>
-<p><code>autoflake</code> is a more lightweight and just remove unused imports and unused variables as reported by pyflakes. The template is configured only for unused imports</p>
+<p>A <strong>linter</strong> is a tool to <em>statically</em> analyze your code and report for problems. For example, you have a function that receives 1 argument, but you accidentally passed 2. Such static analyser can report you about problems without running your code.</p>
 
               
             </article>
@@ -622,41 +477,6 @@ It correctly divides into three sections of <strong>built-in</strong>, <strong>l
       </main>
       
         <footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
-        
-        <a href="../environments/" class="md-footer__link md-footer__link--prev" aria-label="Previous: About environments and virtaulenv" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              About environments and virtaulenv
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../../reference/" class="md-footer__link md-footer__link--next" aria-label="Next: Introduction" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Introduction
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
