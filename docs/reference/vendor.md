@@ -17,7 +17,7 @@ submodules are correctly handled by Git when you do commit. It recognized as ano
 ```shell title="Terminal"
 poetry add vendor/{name}
 ```
-or another way as described in [how to add a dependency](../user-guide/poetry.md)
+or another way as described in [how to add a dependency](./manage-dependencies.md)
 
 And you see something like this
 ```toml title="pyproject.toml"
