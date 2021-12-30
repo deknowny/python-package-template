@@ -19,6 +19,7 @@ nav:
     - About Makefile: user-guide/makefile.md
     - About Poetry: user-guide/poetry.md
     - About environments and virtaulenv: user-guide/environments.md
+    - Formatters: user-guide/formatters.md
   - Reference:
     - Introduction: reference/index.md
     - Manage dependencies: reference/manage-dependencies.md
