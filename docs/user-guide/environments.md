@@ -1,7 +1,7 @@
 !!! Hint
     If you are familiar with `venv`, you can skip it
 
-By a default behavior you have only _one_ Python in your "Terminal" and only one place where all your dependencies are stored. It's okay for local scripting, but when you develop everything in one _scope_, there is can be a requirement: _every project should have their own python version and own dependencies_. Otherwise, it can cause dependencies' version conflict 
+By a default behavior you have only _one_ Python in your "Terminal" and only the one place where all your dependencies are stored. It's okay for local scripting, but when you develop everything in one _scope_, there is can be a requirement: _every project should have their own python version and own dependencies_. Otherwise, it can cause dependencies' version conflict 
 
 !!! Note
     Any the environment's dependencies CLI scripts, for example, `pytest`, will be installed only inside the environment and does not available outside. So running "rules" for the script are the same as for `python` and described below
