@@ -7,6 +7,7 @@ _Production_ dependencies are installed when your library is installed by a user
 
 _Development_ dependencies are installed when your library is installed by a contributor with purpose of adding new feature to your library (always package is installed from source, i.e from GitHub)
 
+All dependencies' information is stored in `pyproject.toml` file. The dependencies' source code is in the `.venv` folder
 
 !!! Question "How does optional dependencies work?"
     All optional dependencies divide into __groups__ by a developer
