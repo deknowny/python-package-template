@@ -27,7 +27,7 @@ my-package = {path = "../my/path"}
 
 
 !!! Tip
-    If you want to edit that source code, you should add `:::toml develop = true`
+    If you want to edit the source code, you should add `:::toml develop = true`
     
     ```toml title="pyproject.toml"
     [tool.poetry.dependencies]
