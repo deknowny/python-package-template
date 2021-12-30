@@ -619,28 +619,28 @@ Now when someone installs your library, <code>requests</code> will be installed 
 </code></pre></div>
 As it's an optional, you should add it to a special group of optional dependencies.</p>
 <p>Your <code>pyproject.toml</code> looks like this
-<div class="highlight"><span class="filename">pyproject.toml</span><pre><span></span><code><span class="p">...</span>
-<span class="k">[tool.poetry.dependencies]</span>
-<span class="n">orjson</span> <span class="o">=</span> <span class="p">{</span><span class="n">optional</span> <span class="o">=</span> <span class="n">true</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s">&quot;^3.6.5&quot;</span><span class="p">}</span>
-<span class="p">...</span>
+<div class="highlight"><span class="filename">pyproject.toml</span><pre><span></span><code><span class="p">...</span><span class="w"></span>
+<span class="k">[tool.poetry.dependencies]</span><span class="w"></span>
+<span class="n">orjson</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">optional</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">true</span><span class="p">,</span><span class="w"> </span><span class="n">version</span><span class="o">=</span><span class="s">&quot;^3.6.5&quot;</span><span class="p">}</span><span class="w"></span>
+<span class="p">...</span><span class="w"></span>
 </code></pre></div></p>
 <p>And now add the dependency to a new group. Let's call it <code>fast-json</code>
-<div class="highlight"><span class="filename">pyproject.toml</span><pre><span></span><code><span class="k">[tool.poetry.extras]</span>
-<span class="c1"># Ordinary extra dependencies</span>
-<span class="n">all</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="highlight"><span class="filename">pyproject.toml</span><pre><span></span><code><span class="k">[tool.poetry.extras]</span><span class="w"></span>
+<span class="c1"># Ordinary extra dependencies</span><span class="w"></span>
+<span class="n">all</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[]</span><span class="w"></span>
 
-<span class="c1"># Fast and optimized JSON parsers</span>
-<span class="hll"><span class="n">fast-json</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;orjson&quot;</span><span class="p">]</span>
-</span><span class="p">...</span>
+<span class="c1"># Fast and optimized JSON parsers</span><span class="w"></span>
+<span class="hll"><span class="n">fast-json</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;orjson&quot;</span><span class="p">]</span><span class="w"></span>
+</span><span class="p">...</span><span class="w"></span>
 </code></pre></div></p>
 <p>It's a good practice to unite all your optional dependencies into a <code>all</code> group so add it there too
-<div class="highlight"><span class="filename">pyproject.toml</span><pre><span></span><code><span class="k">[tool.poetry.extras]</span>
-<span class="c1"># Ordinary extra dependencies</span>
-<span class="hll"><span class="n">all</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;orjson&quot;</span><span class="p">]</span>
+<div class="highlight"><span class="filename">pyproject.toml</span><pre><span></span><code><span class="k">[tool.poetry.extras]</span><span class="w"></span>
+<span class="c1"># Ordinary extra dependencies</span><span class="w"></span>
+<span class="hll"><span class="n">all</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;orjson&quot;</span><span class="p">]</span><span class="w"></span>
 </span>
-<span class="c1"># Fast and optimized JSON parsers</span>
-<span class="n">fast-json</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;orjson&quot;</span><span class="p">]</span>
-<span class="p">...</span>
+<span class="c1"># Fast and optimized JSON parsers</span><span class="w"></span>
+<span class="n">fast-json</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;orjson&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="p">...</span><span class="w"></span>
 </code></pre></div></p>
 <h1 id="add-a-non-optional-dev-dependency">Add a non-optional dev dependency</h1>
 <p><div class="highlight"><span class="filename">Terminal</span><pre><span></span><code>poetry add pytest --dev
@@ -652,30 +652,30 @@ As it's an optional, you should add it to a special group of optional dependenci
 It looks like optional production dependency, but now we should change <code>extra</code> section in another way.</p>
 <p>All optional development dependencies groups marked with prefix <code>dev-</code>. So our <code>pytest-asyncio</code> should be addd in such groups.</p>
 <p>Check out <code>pyproject.toml</code>. There is an existed group of optional dependencies used for testing (as <code>pytest-asyncio</code> too)</p>
-<div class="highlight"><span class="filename">pyproject.toml</span><pre><span></span><code><span class="k">[tool.poetry.extra]</span>
-<span class="p">...</span>
-<span class="hll"><span class="n">dev-test</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;pytest&quot;</span><span class="p">,</span> <span class="s">&quot;pytest-cov&quot;</span><span class="p">,</span> <span class="s">&quot;coveralls&quot;</span><span class="p">,</span> <span class="s">&quot;coverage&quot;</span><span class="p">]</span>
+<div class="highlight"><span class="filename">pyproject.toml</span><pre><span></span><code><span class="k">[tool.poetry.extra]</span><span class="w"></span>
+<span class="p">...</span><span class="w"></span>
+<span class="hll"><span class="n">dev-test</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;pytest&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;pytest-cov&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;coveralls&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;coverage&quot;</span><span class="p">]</span><span class="w"></span>
 </span></code></pre></div>
 <p>Now put it here</p>
-<div class="highlight"><span class="filename">pyproject.toml</span><pre><span></span><code><span class="k">[tool.poetry.extra]</span>
-<span class="p">...</span>
-<span class="hll"><span class="n">dev-test</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;pytest-asyncio&quot;</span><span class="p">,</span> <span class="s">&quot;pytest&quot;</span><span class="p">,</span> <span class="s">&quot;pytest-cov&quot;</span><span class="p">,</span> <span class="s">&quot;coveralls&quot;</span><span class="p">,</span> <span class="s">&quot;coverage&quot;</span><span class="p">]</span>
+<div class="highlight"><span class="filename">pyproject.toml</span><pre><span></span><code><span class="k">[tool.poetry.extra]</span><span class="w"></span>
+<span class="p">...</span><span class="w"></span>
+<span class="hll"><span class="n">dev-test</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;pytest-asyncio&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;pytest&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;pytest-cov&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;coveralls&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;coverage&quot;</span><span class="p">]</span><span class="w"></span>
 </span></code></pre></div>
 <hr />
 <p>And there is also a <code>dev-all</code> group that need to be modified</p>
-<div class="highlight"><span class="filename">pyproject.toml</span><pre><span></span><code><span class="k">[tool.poetry.extra]</span>
-<span class="p">...</span>
-<span class="n">dev-test</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;pytest-asyncio&quot;</span><span class="p">,</span> <span class="s">&quot;pytest&quot;</span><span class="p">,</span> <span class="s">&quot;pytest-cov&quot;</span><span class="p">,</span> <span class="s">&quot;coveralls&quot;</span><span class="p">,</span> <span class="s">&quot;coverage&quot;</span><span class="p">]</span>
-<span class="p">...</span>
-<span class="n">dev-all</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s">&quot;black&quot;</span><span class="p">,</span> <span class="s">&quot;isort&quot;</span><span class="p">,</span> <span class="s">&quot;pre-commit&quot;</span><span class="p">,</span>
-<span class="hll">    <span class="s">&quot;pytest&quot;</span><span class="p">,</span> <span class="s">&quot;pytest-cov&quot;</span><span class="p">,</span> <span class="s">&quot;pytest-asyncio&quot;</span>
-</span>    <span class="s">&quot;coveralls&quot;</span><span class="p">,</span> <span class="s">&quot;coverage&quot;</span><span class="p">,</span>
-    <span class="s">&quot;mypy&quot;</span><span class="p">,</span>
-    <span class="s">&quot;bumpversion&quot;</span><span class="p">,</span>
-    <span class="s">&quot;autoflake&quot;</span><span class="p">,</span>
-    <span class="s">&quot;mkdocs&quot;</span><span class="p">,</span> <span class="s">&quot;mkdocs-material&quot;</span><span class="p">,</span> <span class="s">&quot;mike&quot;</span>
-<span class="p">]</span>
+<div class="highlight"><span class="filename">pyproject.toml</span><pre><span></span><code><span class="k">[tool.poetry.extra]</span><span class="w"></span>
+<span class="p">...</span><span class="w"></span>
+<span class="n">dev-test</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;pytest-asyncio&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;pytest&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;pytest-cov&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;coveralls&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;coverage&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="p">...</span><span class="w"></span>
+<span class="n">dev-all</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;black&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;isort&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;pre-commit&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="hll"><span class="w">    </span><span class="s">&quot;pytest&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;pytest-cov&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;pytest-asyncio&quot;</span><span class="w"></span>
+</span><span class="w">    </span><span class="s">&quot;coveralls&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;coverage&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;mypy&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;bumpversion&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;autoflake&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;mkdocs&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;mkdocs-material&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;mike&quot;</span><span class="w"></span>
+<span class="p">]</span><span class="w"></span>
 </code></pre></div>
 
               

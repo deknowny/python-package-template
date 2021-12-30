@@ -66,6 +66,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#1-folder-for-your-dependencies" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -401,9 +406,52 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          About vendor dependencies
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         About vendor dependencies
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-folder-for-your-dependencies" class="md-nav__link">
+    1) Folder for your dependencies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-add-git-submodule" class="md-nav__link">
+    2) Add git submodule
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-add-it-with-poetry" class="md-nav__link">
+    3) Add it with poetry
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -423,6 +471,51 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-folder-for-your-dependencies" class="md-nav__link">
+    1) Folder for your dependencies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-add-git-submodule" class="md-nav__link">
+    2) Add git submodule
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-add-it-with-poetry" class="md-nav__link">
+    3) Add it with poetry
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
@@ -435,7 +528,32 @@
 
   <h1>About vendor dependencies</h1>
 
-
+<p>Sometimes it is necessary to have a dependency with its source by a hand. Maybe you develop it or just fix some bugs or want to add new feature, anyway you need that its source code dto be placed with your source</p>
+<h2 id="1-folder-for-your-dependencies">1) Folder for your dependencies</h2>
+<p>It cannot be placed in <code>.venv</code> anymore. All dependencies' source code usually place in <code>vendor</code> folder, so, firstly, you need to create it</p>
+<h2 id="2-add-git-submodule">2) Add git submodule</h2>
+<p><div class="highlight"><span class="filename">Terminal</span><pre><span></span><code>git add submodule <span class="o">{</span>repository url<span class="o">}</span> vendor/<span class="o">{</span>repo name<span class="o">}</span>
+</code></pre></div>
+submodules are correctly handled by Git when you do commit. It recognized as another repository, not just an ordinary folder. It is still a Git repository that can be pulled, for example.  </p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Recommend you add such dependencies from your own fork of the original repository</p>
+</div>
+<h2 id="3-add-it-with-poetry">3) Add it with <code>poetry</code></h2>
+<p><div class="highlight"><span class="filename">Terminal</span><pre><span></span><code>poetry add vendor/<span class="o">{</span>name<span class="o">}</span>
+</code></pre></div>
+or another way as described in <a href="../../user-guide/poetry/">how to add a dependency</a></p>
+<p>And you see something like this
+<div class="highlight"><span class="filename">pyproject.toml</span><pre><span></span><code><span class="k">[tool.poetry.dependencies]</span><span class="w"></span>
+<span class="n">my-package</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;../my/path&quot;</span><span class="p">}</span><span class="w"></span>
+</code></pre></div></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you want to edit that source code, you should add <code class="highlight"><span class="n">develop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"></span></code></p>
+<div class="highlight"><span class="filename">pyproject.toml</span><pre><span></span><code><span class="k">[tool.poetry.dependencies]</span><span class="w"></span>
+<span class="n">my-package</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;../my/path&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">develop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">true</span><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</div>
 
               
             </article>
