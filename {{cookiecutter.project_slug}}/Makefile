@@ -43,7 +43,7 @@ format:
 		--remove-unused-variables \
 		--recursive \
 		--in-place {{ cookiecutter.project_slug }} tests && \
-	git add -u &&
+	git add -u
 
 # Run tests locally
 test:
